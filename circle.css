@@ -71,11 +71,12 @@
     transform: rotate(360deg);
   }
 }
-.container.bigger {
-    animation: bigger 3s linear forwards;
+
+.container.grow {
+    animation: grow 3s linear forwards;
 }
 
-@keyframes bigger {
+@keyframes grow {
     from {
         transform: scale(1);
     }
@@ -85,11 +86,11 @@
     }
 }
 
-.container.smaller {
-    animation: smaller 3s linear forwards;
+.container.shrink {
+    animation: shrink 3s linear forwards;
 }
 
-@keyframes smaller {
+@keyframes shrink {
     from {
         transform: scale(1.2);
     }
