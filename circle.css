@@ -11,29 +11,24 @@
 
 .circle {
   position: absolute;
-  background-color: violet;
+  background-color: #151423;
   height: 100%;
   width: 100%;
   border-radius: 50%;
   top: 0;
   left: 0;
   z-index: -1;
+  box-shadow: inner 0 0 20px 0 #fff;
 }
 
 .circle-gradient {
   background: conic-gradient(
-    #55b7a4,
-    #4ca493,
+    #ffffff,
+    #9eabc9,
     #fff,
-    #fff,
-    #336d62,
-    #55b7a4
-      /* #55b7a4 0%,
-#4ca493 40%,
-#fff 40%,
-#fff 60%,
-#336d62 60%,
-#2a5b52 100% */
+    #9eabc9,
+    #ffffff,
+    #ffffff
   );
   position: absolute;
   height: 320px;
@@ -42,6 +37,8 @@
   border-radius: 50%;
   top: -10px;
   left: -10px;
+  box-shadow: 0 0 20px #7179b4;
+
 }
 .dot {
   background: white;
@@ -49,6 +46,7 @@
   height: 20px;
   width: 20px;
   display: block;
+  box-shadow: 0 0 15px 0 #7179b4;
 }
 
 .dot-container {

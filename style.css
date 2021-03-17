@@ -1,31 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;1,400&display=swap');
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-    background: url(./img/meditation.jpg) no-repeat center center/cover;
-    min-height: 100vh;
-    overflow: hidden;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
-    font-family: Montserrat, sans-serif;
-    color: aliceblue;
-    margin: 0;
+  background: url(./img/meditation2.jpg) no-repeat center center/cover;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: Lato, sans-serif;
+  color: aliceblue;
+  margin: 0;
 }
 
 body::after {
-    content: "";
-    background: black;
-    opacity: 0.6;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    z-index: -1;
-  }
+  content: "";
+  background: black;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+}
 
+h1 {
+  margin-top: 50px;
+  font-family: Lato, sans-serif;
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 100;
+  font-family: Lato;
+}
