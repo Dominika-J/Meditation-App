@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url(./img/meditation.jpg) no-repeat center center/cover;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    font-family: Montserrat, sans-serif;
+    color: aliceblue;
+    margin: 0;
+}
+
+body::after {
+    content: "";
+    background: black;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+  }
+
