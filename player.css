@@ -13,6 +13,7 @@
   
   .action-btn {
     background-color: #151423;
+    font-size: 12px;
     border: 0;
     color: #fff;
     cursor: pointer;
@@ -22,7 +23,7 @@
   
   .action-btn.action-btn-big {
     color: #fff;
-    font-size: 25px;
+    font-size: 20px;
   }
   
   .action-btn:focus {

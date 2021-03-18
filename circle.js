@@ -1,5 +1,3 @@
-// import { myFunc } from './player.js';
-
 const $container = document.getElementById('container');
 const $text = document.getElementById('text');
 
@@ -25,4 +23,3 @@ circleAnimation();
 
 setInterval(circleAnimation, TIME_TOTAL);
 
-// myFunc();
