@@ -9,7 +9,7 @@ const nextBtn = document.getElementById('next');
 const audio = document.getElementById('audio');
 
 // Song titles
-const songs = ['hey', 'summer', 'ukulele'];
+const songs = ['relaxing', 'relaxing', 'relaxing'];
 
 // Keep track of song
 let songIndex = 2;
