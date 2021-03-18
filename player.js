@@ -1,74 +1,64 @@
-// export const myFunc = () => {
-//     alert('smr')
-// }
+const $musicContainer = document.getElementById("music-container");
+const $playBtn = document.getElementById("play");
+const $prevBtn = document.getElementById("prev");
+const $nextBtn = document.getElementById("next");
+const $audio = document.getElementById("audio");
 
-const musicContainer = document.getElementById('music-container');
-const playBtn = document.getElementById('play');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-const audio = document.getElementById('audio');
-
-// Song titles
-const songs = ['hey', 'summer', 'ukulele'];
-
-// Keep track of song
-let songIndex = 2;
+const SONGS = ["sound", "sound1", "sound2", "sound3"];
+let SONG_INDEX = 0;
 
 // Initially load song details into DOM
-loadSong(songs[songIndex]);
+loadSong(SONGS[SONG_INDEX]);
 
 // Update song details
 function loadSong(song) {
-  audio.src = `music/${song}.mp3`;
+  $audio.src = `mp3/${song}.mp3`;
 }
 
 // Play song
 function playSong() {
-  musicContainer.classList.add('play');
-  playBtn.querySelector('i.fas').classList.remove('fa-play');
-  playBtn.querySelector('i.fas').classList.add('fa-pause');
-
-  audio.play();
+  $musicContainer.classList.add("play");
+  $playBtn.querySelector("i.fas").classList.remove("fa-play");
+  $playBtn.querySelector("i.fas").classList.add("fa-pause");
+  $audio.play();
 }
 
 // Pause song
 function pauseSong() {
-  musicContainer.classList.remove('play');
-  playBtn.querySelector('i.fas').classList.add('fa-play');
-  playBtn.querySelector('i.fas').classList.remove('fa-pause');
-
-  audio.pause();
+  $musicContainer.classList.remove("play");
+  $playBtn.querySelector("i.fas").classList.add("fa-play");
+  $playBtn.querySelector("i.fas").classList.remove("fa-pause");
+  $audio.pause();
 }
 
 // Previous song
 function prevSong() {
-  songIndex--;
+  SONG_INDEX--;
 
-  if (songIndex < 0) {
-    songIndex = songs.length - 1;
+  if (SONG_INDEX < 0) {
+    SONG_INDEX = SONGS.length - 1;
   }
 
-  loadSong(songs[songIndex]);
+  loadSong(SONGS[SONG_INDEX]);
 
   playSong();
 }
 
 // Next song
 function nextSong() {
-  songIndex++;
+  SONG_INDEX++;
 
-  if (songIndex > songs.length - 1) {
-    songIndex = 0;
+  if (SONG_INDEX > SONGS.length - 1) {
+    SONG_INDEX = 0;
   }
 
-  loadSong(songs[songIndex]);
+  loadSong(SONGS[SONG_INDEX]);
 
   playSong();
 }
 
-// Event listeners
-playBtn.addEventListener('click', () => {
-  const isPlaying = musicContainer.classList.contains('play');
+$playBtn.addEventListener("click", () => {
+  const isPlaying = $musicContainer.classList.contains("play");
 
   if (isPlaying) {
     pauseSong();
@@ -77,12 +67,8 @@ playBtn.addEventListener('click', () => {
   }
 });
 
-// Change song
-prevBtn.addEventListener('click', prevSong);
-nextBtn.addEventListener('click', nextSong);
-
-// Time/song update
-audio.addEventListener('timeupdate', updateProgress);
+$prevBtn.addEventListener("click", prevSong);
+$nextBtn.addEventListener("click", nextSong);
 
 // Song ends
-audio.addEventListener('ended', nextSong);
+$audio.addEventListener("ended", nextSong);
