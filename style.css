@@ -53,5 +53,9 @@ h1 {
 p {
   font-size: 20px;
   font-weight: 100;
-  font-family: Lato;
+}
+
+.welcome-text {
+  font-weight: 100;
+  cursor: pointer;
 }
