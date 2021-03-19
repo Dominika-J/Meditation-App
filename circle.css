@@ -63,7 +63,7 @@
   
 }
 
-.dot-container-animated {
+.dot-container.circling {
   animation: rotate 7.5s linear forwards infinite;
   transform-origin: bottom center;
 }
