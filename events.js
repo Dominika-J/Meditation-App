@@ -3,8 +3,7 @@ const $text = document.getElementById('text');
 const $musicContainer = document.getElementById("music-container");
 const $dotContainer = document.getElementById('dot-container');
 const $playBtn = document.getElementById("play");
-const $containerGrow = document.getElementsByClassName("container grow");
-const $containerShrink = document.getElementsByClassName("container grow");
+const $animationControl = Array.from(document.getElementsByClassName("animation-control"));
 
 
 function showPlayer(){
@@ -22,17 +21,17 @@ function startPauseMeditation() {
     $text.style.display = 'block';
     $dotContainer.classList.add('circling');
 
-    const runningDot = $dotContainer.style.animationPlayState === 'running';
-    $dotContainer.style.animationPlayState = runningDot ? 'paused' : 'running';
+    $animationControl.forEach(animation => {
+        const running = animation.style.animationPlayState || 'paused';
+        animation.style.animationPlayState = running === 'running' ? 'paused' : 'running';
+      })
 
-    // const runningGrow = $containerGrow.style.animationPlayState === 'running';
-    // $containerGrow.style.animationPlayState = runningGrow ? 'paused' : 'running';
-
-    // const runningShrink = $containerShrink.style.animationPlayState === 'running';
-    // $containerShrink.style.animationPlayState = runningShrink ? 'paused' : 'running';
-
-
+    // const isAnimationRunning = $animationControl.forEach()
+    
+    // style.animationPlayState === 'running';
+    // $animationControl.style.animationPlayState = isAnimationRunning ? 'paused' : 'running';
 }
+
 
 $playBtn.onclick =  startPauseMeditation;
 

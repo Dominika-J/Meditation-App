@@ -78,7 +78,7 @@
 .dot-container.circling {
   animation: rotate 7.5s linear forwards infinite;
   transform-origin: bottom center;
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 @keyframes rotate {
@@ -94,7 +94,6 @@
 .container.grow {
     animation: grow 3s linear forwards;
     animation-play-state: running;
-
 }
 
 @keyframes grow {
@@ -110,7 +109,6 @@
 .container.shrink {
     animation: shrink 3s linear forwards;
     animation-play-state: running;
-
 }
 
 @keyframes shrink {
