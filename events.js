@@ -9,10 +9,10 @@ function showPlayer(){
     $musicContainer.style.visibility = 'visible';
     $musicContainer.classList.add('animated');
     $dotContainer.style.visibility = 'visible';
+    $dotContainer.classList.add('fadeIn');
 }
 
 $start.onclick =  showPlayer;
-
 
 function startMeditation() {
     $start.style.display = 'none';

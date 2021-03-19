@@ -60,7 +60,19 @@
   left: 140px;
   width: 20px;
   height: 190px;
-  
+}
+
+.dot-container.fadeIn {
+  animation: fadeIn ease 5s;;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .dot-container.circling {
