@@ -6,7 +6,11 @@
   margin-bottom: 50px;
 }
 
-@keyframes fadeInOpacity {
+.music-container.animated {
+  animation: fadeIn ease 5s;;
+}
+
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }

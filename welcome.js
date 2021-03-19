@@ -1,14 +1,24 @@
 const $start = document.getElementById('start');
-const $musicContainer = document.getElementById("music-container");
 const $text = document.getElementById('text');
+const $musicContainer = document.getElementById("music-container");
 const $dotContainer = document.getElementById('dot-container');
 
 
-function welcomePage() {
+function showPlayer(){
     $start.style.display = 'none';
     $musicContainer.style.visibility = 'visible';
-    $text.style.display = 'block';
-    $dotContainer.style.visibility = 'visible';
+    $musicContainer.classList.add('animated');
 }
 
-$start.onclick = welcomePage;
+$start.onclick =  showPlayer;
+
+
+
+// function startMeditation() {
+//     $start.style.display = 'none';
+   
+//     $text.style.display = 'block';
+//     $dotContainer.style.visibility = 'visible';
+// }
+
+
