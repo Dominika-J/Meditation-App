@@ -18,7 +18,6 @@ function startMeditation() {
     $start.style.display = 'none';
     $text.style.display = 'block';
     $dotContainer.classList.add('circling');
-    $dotContainer.classList.add('circling');
 }
 
 $playBtn.onclick =  startMeditation;
