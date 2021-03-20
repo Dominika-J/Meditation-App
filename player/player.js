@@ -5,10 +5,10 @@ const $nextBtn = document.getElementById("next");
 const $audio = document.getElementById("audio");
 
 const SONGS = ["sound", "sound1", "sound2", "sound3"];
-let SONG_INDEX = 0;
+let songIndex = 0;
 
 // Initially load song details into DOM
-loadSong(SONGS[SONG_INDEX]);
+loadSong(SONGS[songIndex]);
 
 // Update song details
 function loadSong(song) {
@@ -21,6 +21,7 @@ function playSong() {
   $playBtn.querySelector("i.fas").classList.remove("fa-play");
   $playBtn.querySelector("i.fas").classList.add("fa-pause");
   $audio.play();
+  toggleButtonState({ state: false });
 }
 
 // Pause song
@@ -29,30 +30,36 @@ function pauseSong() {
   $playBtn.querySelector("i.fas").classList.add("fa-play");
   $playBtn.querySelector("i.fas").classList.remove("fa-pause");
   $audio.pause();
+  toggleButtonState({ state: true });
+}
+
+function toggleButtonState({ state }){
+  $prevBtn.disabled = state;
+  $nextBtn.disabled = state;
 }
 
 // Previous song
 function prevSong() {
-  SONG_INDEX--;
+  songIndex--;
 
-  if (SONG_INDEX < 0) {
-    SONG_INDEX = SONGS.length - 1;
+  if (songIndex < 0) {
+    songIndex = SONGS.length - 1;
   }
 
-  loadSong(SONGS[SONG_INDEX]);
+  loadSong(SONGS[songIndex]);
 
   playSong();
 }
 
 // Next song
 function nextSong() {
-  SONG_INDEX++;
+  songIndex++;
 
-  if (SONG_INDEX > SONGS.length - 1) {
-    SONG_INDEX = 0;
+  if (songIndex > SONGS.length - 1) {
+    songIndex = 0;
   }
 
-  loadSong(SONGS[SONG_INDEX]);
+  loadSong(SONGS[songIndex]);
 
   playSong();
 }
