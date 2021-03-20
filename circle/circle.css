@@ -1,22 +1,29 @@
+:root {
+  --size: 320px;
+  --border-width: 10px;
+  --shoulder-width: 20px;
+  --shoulder-length: 40px;
+}
+
 .container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
-  height: 300px;
-  width: 300px;
+  height: var(--size);
+  width: var(--size);
   transform: scale(1);
 }
 
 .circle {
   position: absolute;
   background-color: #151423;
-  height: 100%;
-  width: 100%;
+  height: calc(100% - 2*var(--border-width));
+  width: calc(100% - 2*var(--border-width));
   border-radius: 50%;
-  top: 0;
-  left: 0;
+  top: var(--border-width);
+  left: var(--border-width);
   z-index: -1;
   box-shadow: inner 0 0 20px 0 #fff;
 }
@@ -36,26 +43,16 @@
 
 .initialized .text-start {
   display: none;
-} 
+}
 
 .circle-gradient {
-  background: conic-gradient(
-    #ffffff,
-    #9eabc9,
-    #fff,
-    #9eabc9,
-    #ffffff,
-    #ffffff
-  );
+  background: conic-gradient(#ffffff, #9eabc9, #fff, #9eabc9, #ffffff, #ffffff);
   position: absolute;
-  height: 320px;
-  width: 320px;
+  height: 100%;
+  width: 100%;
   z-index: -2;
   border-radius: 50%;
-  top: -10px;
-  left: -10px;
   box-shadow: 0 0 20px #7179b4;
-
 }
 .dot {
   background: white;
@@ -70,9 +67,10 @@
   visibility: hidden;
   position: absolute;
   top: -40px;
-  left: 140px;
-  width: 20px;
-  height: 190px;
+  left: calc(50% - 2/var(--shoulder-width));
+  width: var(--shoulder-width);
+  height: calc(50% + var(--shoulder-length)); /* shoulder length = 40px */
+  /* background-color: red; shoulder of dot */
   transform-origin: bottom center;
   animation-play-state: paused;
   transition: opacity 5s; /* animace */
@@ -111,33 +109,40 @@
     transform: rotate(360deg);
   }
 }
-  
+
 .container.grow {
-    animation: grow 3s linear forwards;
-    animation-play-state: running;
+  animation: grow 3s linear forwards;
+  animation-play-state: running;
 }
 
 @keyframes grow {
-    from {
-        transform: scale(1);
-    }
+  from {
+    transform: scale(1);
+  }
 
-    to {
-        transform: scale(1.2);
-    }
+  to {
+    transform: scale(1.2);
+  }
 }
 
 .container.shrink {
-    animation: shrink 3s linear forwards;
-    animation-play-state: running;
+  animation: shrink 3s linear forwards;
+  animation-play-state: running;
 }
 
 @keyframes shrink {
-    from {
-        transform: scale(1.2);
-    }
+  from {
+    transform: scale(1.2);
+  }
 
-    to {
-        transform: scale(1);
-    }
+  to {
+    transform: scale(1);
+  }
 }
+
+@media only screen and (max-width: 500px) {
+  .container {
+    height: 250px;
+    width: 250px;
+  }
+}  
