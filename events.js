@@ -8,6 +8,7 @@ const $animationControl = Array.from(
 function showPlayer() {
   $body.classList.add("initialized");
 }
+
 $textStart.onclick = showPlayer;
 
 function toggleMeditation() {
@@ -20,14 +21,9 @@ function toggleMeditation() {
     $body.classList.add("play");
     $body.classList.remove("pause");
   }
+
 }
 
 $playBtn.onclick = toggleMeditation;
 
-
-//     $animationControl.forEach(animation => {
-//         const running = animation.style.animationPlayState || 'paused';
-//         animation.style.animationPlayState = running === 'running' ? 'paused' : 'running';
-//       })
-//     }
 

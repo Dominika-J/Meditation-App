@@ -24,11 +24,3 @@ const circleAnimation = () => {
 circleAnimation();
 
 setInterval(circleAnimation, TIME_TOTAL);
-
-
-// setTimeout(() => {
-//     $text.innerText = 'Exhale';
-//     $container.classList.toggle('shrink');
-// }, TIME_HOLD)
-// }, TIME_BREATHING);
-// }
