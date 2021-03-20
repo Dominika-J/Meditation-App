@@ -7,14 +7,16 @@ const TIME_HOLD = TIME_TOTAL / 5;
 
 const circleAnimation = () => {
     $text.innerText = 'Inhale';
-    $container.className = 'container grow';
+    $container.classList.add('grow');
+    $container.classList.remove('shrink');
 
     setTimeout(() => {
         $text.innerText = 'Hold';
 
         setTimeout(() => {
             $text.innerText = 'Exhale';
-            $container.className = 'container shrink'
+            $container.classList.add('shrink');
+            $container.classList.remove('grow');
         }, TIME_HOLD)
     }, TIME_BREATHING);
 }
@@ -22,4 +24,3 @@ const circleAnimation = () => {
 circleAnimation();
 
 setInterval(circleAnimation, TIME_TOTAL);
-

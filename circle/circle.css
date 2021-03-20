@@ -25,6 +25,19 @@
   display: none;
 }
 
+.play .text {
+  display: block;
+}
+
+.text-start {
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.initialized .text-start {
+  display: none;
+} 
+
 .circle-gradient {
   background: conic-gradient(
     #ffffff,
@@ -60,10 +73,16 @@
   left: 140px;
   width: 20px;
   height: 190px;
+  transform-origin: bottom center;
+  animation-play-state: paused;
+  transition: opacity 5s; /* animace */
+  opacity: 0;
+  animation: rotate 7.5s linear forwards infinite paused;
 }
 
-.dot-container.fadeIn {
-  animation: fadeIn ease 5s;;
+.initialized .dot-container {
+  visibility: visible;
+  opacity: 1;
 }
 
 @keyframes fadeIn {
@@ -75,9 +94,12 @@
   }
 }
 
-.dot-container.circling {
-  animation: rotate 7.5s linear forwards infinite;
-  transform-origin: bottom center;
+.play .dot-container {
+  animation-play-state: running;
+}
+
+.pause .dot-container {
+  animation-play-state: paused;
 }
 
 @keyframes rotate {
@@ -89,9 +111,10 @@
     transform: rotate(360deg);
   }
 }
-
+  
 .container.grow {
     animation: grow 3s linear forwards;
+    animation-play-state: running;
 }
 
 @keyframes grow {
@@ -106,6 +129,7 @@
 
 .container.shrink {
     animation: shrink 3s linear forwards;
+    animation-play-state: running;
 }
 
 @keyframes shrink {

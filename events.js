@@ -1,23 +1,29 @@
-const $start = document.getElementById('start');
-const $text = document.getElementById('text');
-const $musicContainer = document.getElementById("music-container");
-const $dotContainer = document.getElementById('dot-container');
+const $body = document.body;
+const $textStart = document.getElementById("text-start");
 const $playBtn = document.getElementById("play");
+const $animationControl = Array.from(
+  document.getElementsByClassName("animation-control")
+);
 
-function showPlayer(){
-    $start.style.display = 'none';
-    $musicContainer.style.visibility = 'visible';
-    $musicContainer.classList.add('animated');
-    $dotContainer.style.visibility = 'visible';
-    $dotContainer.classList.add('fadeIn');
+function showPlayer() {
+  $body.classList.add("initialized");
 }
 
-$start.onclick =  showPlayer;
+$textStart.onclick = showPlayer;
 
-function startMeditation() {
-    $start.style.display = 'none';
-    $text.style.display = 'block';
-    $dotContainer.classList.add('circling');
+function toggleMeditation() {
+  const isPlaying = $body.classList.contains("play");
+
+  if (isPlaying) {
+    $body.classList.add("pause");
+    $body.classList.remove("play");
+  } else {
+    $body.classList.add("play");
+    $body.classList.remove("pause");
+  }
+
 }
 
-$playBtn.onclick =  startMeditation;
+$playBtn.onclick = toggleMeditation;
+
+
