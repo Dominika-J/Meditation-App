@@ -1,35 +1,33 @@
-const $textStart = document.getElementById('text-start');
 const $body = document.body;
+const $textStart = document.getElementById("text-start");
+const $playBtn = document.getElementById("play");
+const $animationControl = Array.from(
+  document.getElementsByClassName("animation-control")
+);
 
-const $animationControl = Array.from(document.getElementsByClassName('animation-control'));
-
-
-function showPlayer(){
-    $body.classList.add('initialized');
+function showPlayer() {
+  $body.classList.add("initialized");
 }
-    $textStart.onclick =  showPlayer;
+$textStart.onclick = showPlayer;
 
+function toggleMeditation() {
+  const isPlaying = $body.classList.contains("play");
 
-// function showPlayer(){
-//     $textStart.style.display = 'none';
-//     $musicContainer.style.visibility = 'visible';
-//     $musicContainer.classList.add('animated');
-//     $dotContainer.style.visibility = 'visible';
-//     $dotContainer.classList.add('fadeIn');
-// }
+  if (isPlaying) {
+    $body.classList.add("pause");
+    $body.classList.remove("play");
+  } else {
+    $body.classList.add("play");
+    $body.classList.remove("pause");
+  }
+}
 
-// $textStart.onclick =  showPlayer;
+$playBtn.onclick = toggleMeditation;
 
-// function textStartPauseMeditation() {
-//     $textStart.style.display = 'none';
-//     $text.style.display = 'block';
-//     $dotContainer.classList.add('circling');
 
 //     $animationControl.forEach(animation => {
 //         const running = animation.style.animationPlayState || 'paused';
 //         animation.style.animationPlayState = running === 'running' ? 'paused' : 'running';
 //       })
 //     }
-
-// $playBtn.onclick =  textStartPauseMeditation;
 

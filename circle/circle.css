@@ -25,6 +25,10 @@
   display: none;
 }
 
+.play .text {
+  display: block;
+}
+
 .text-start {
   font-weight: 100;
   cursor: pointer;
@@ -69,11 +73,16 @@
   left: 140px;
   width: 20px;
   height: 190px;
+  transform-origin: bottom center;
+  animation-play-state: paused;
+  transition: opacity 5s; /* animace */
+  opacity: 0;
+  animation: rotate 7.5s linear forwards infinite paused;
 }
 
 .initialized .dot-container {
   visibility: visible;
-  animation: fadeIn ease 5s;
+  opacity: 1;
 }
 
 @keyframes fadeIn {
@@ -85,10 +94,12 @@
   }
 }
 
-.dot-container.circling {
-  animation: rotate 7.5s linear forwards infinite;
-  transform-origin: bottom center;
+.play .dot-container {
   animation-play-state: running;
+}
+
+.pause .dot-container {
+  animation-play-state: paused;
 }
 
 @keyframes rotate {
