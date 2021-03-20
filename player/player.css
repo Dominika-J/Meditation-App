@@ -44,3 +44,15 @@
 .action-btn:focus {
   outline: 0;
 }
+
+@media only screen and (max-width: 500px) {
+  .action-btn {
+    font-size: 16px;
+    padding: 15px;
+    margin: 0 15px;
+  }
+  .action-btn.action-btn-big {
+    color: #fff;
+    font-size: 25px;
+  }
+}
