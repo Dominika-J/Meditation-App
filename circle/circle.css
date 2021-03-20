@@ -25,6 +25,15 @@
   display: none;
 }
 
+.text-start {
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.initialized .text-start {
+  display: none;
+} 
+
 .circle-gradient {
   background: conic-gradient(
     #ffffff,
@@ -62,8 +71,9 @@
   height: 190px;
 }
 
-.dot-container.fadeIn {
-  animation: fadeIn ease 5s;;
+.initialized .dot-container {
+  visibility: visible;
+  animation: fadeIn ease 5s;
 }
 
 @keyframes fadeIn {
