@@ -6,6 +6,10 @@
 }
 
 body {
+  background: url(./img/meditation.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   overflow: hidden;
   display: flex;
@@ -18,29 +22,6 @@ body {
   z-index: -2;
 }
 
-.nightsky {
-  position: absolute;
-  z-index: -1;
-  height: 6000px;
-  width: 8000px;
-  top: -100px;
-  background: url(./img/paul-volkmer-fX-qWsXl5x8-unsplash.jpg);
-  background-repeat: repeat; 
-  animation-name: spin;
-  animation-duration: 500s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-} 
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 body::after {
   content: "";
   background: black;
@@ -51,14 +32,6 @@ body::after {
   right: 0;
   position: fixed;
   z-index: -1;
-}
-
-.mountains {
-  position: absolute;
-  z-index: -1;
-  height: 100vh;
-  width: 100%;
-  opacity: 0.8;
 }
 
 h1 {
