@@ -4,7 +4,7 @@ const $prevBtn = document.getElementById("prev");
 const $nextBtn = document.getElementById("next");
 const $audio = document.getElementById("audio");
 
-const SONGS = ["sound", "sound1", "sound2", "sound3"];
+const SONGS = ["sound1", "sound2", "sound", "sound3"];
 let songIndex = 0;
 
 // Initially load song details into DOM
