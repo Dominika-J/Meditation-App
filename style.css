@@ -6,7 +6,7 @@
 }
 
 body {
-  background: url(./img/pawel-nolbert-62OK9xwVA0c-unsplash.jpg);
+  background: url(./img/mountainsandsky.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -62,7 +62,7 @@ p {
 
 @media only screen and (max-width: 500px) {
   body {
-    background: url(./img/pawel-nolbert-62OK9xwVA0c-unsplash.jpg);
+    background: url(./img/mobile.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
